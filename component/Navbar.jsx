@@ -12,8 +12,8 @@ export default function Navbar() {
           <div className={styles.text}>012 345 678</div>
         </div>
       </div>
-      <div className={styles.item}></div>
-      <div className={styles.item}></div>
+      <div className={styles.item}>center</div>
+      <div className={styles.item}>right</div>
     </div>
   )
 }
