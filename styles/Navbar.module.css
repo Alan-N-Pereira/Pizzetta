@@ -24,11 +24,6 @@
 	justify-content: flex-end;
 }
 
-.logo {
-	min-height: 80%;
-	min-width: 80%;
-}
-
 .callButton {
 	background-color: white;
 	border-radius: 50%;

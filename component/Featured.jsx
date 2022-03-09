@@ -18,8 +18,7 @@ export default function Featured() {
             
         }
     }
-
-    console.log(index)
+    
   return (
     <div className={styles.container}>
         <div className={styles.arrowContainer} style={{left:0}}>
@@ -28,7 +27,7 @@ export default function Featured() {
         <div className={styles.wrapper}>
             {images.map((img, i )=> (
                 <div className={styles.imgContainer} key={i} style={{transform:`translateX(${-100*index}vw)`}}>
-                        <Image src={img} className={styles.logo} alt='' layout='fill' objectFit='contain'/>
+                        <Image src={img} alt='' layout='fill' objectFit='contain'/>
                 </div>
             ))}
         </div>
