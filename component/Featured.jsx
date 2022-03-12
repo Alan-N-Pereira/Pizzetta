@@ -4,9 +4,9 @@ import styles from '../styles/Featured.module.css';
 export default function Featured() {
     const [index,setIndex] = useState(0)
     const images =[
-        '/img/featured.jpg',
+        '/img/featured.png',
         '/img/featured2.png',
-        // '/img/featured3.png',
+        '/img/featured3.png',
     ]
 
     const handleArrow = (direction)=>{
