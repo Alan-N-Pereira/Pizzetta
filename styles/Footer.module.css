@@ -10,6 +10,9 @@
 	display: flex;
 }
 
+.item:first-child {
+	opacity: 30%;
+}
 .item:last-child {
 	flex: 2;
 	padding: 50px;
