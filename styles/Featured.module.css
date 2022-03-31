@@ -28,3 +28,10 @@
 	position: relative;
 	transition: all 1.5s ease-in-out;
 }
+
+@media screen and (max-width: 480px) {
+	.container {
+		padding-bottom: 10%;
+		height: 60vh;
+	}
+}
