@@ -7,7 +7,7 @@ export default function Cart() {
     <div className={styles.container}>
         <div className={styles.left}>
             <table className={styles.table}>
-                <tr className={styles.tr}>
+                <tr className={styles.trTitle}>
                     <th>Product</th>
                     <th>Name</th>
                     <th>Extras</th>
@@ -15,7 +15,7 @@ export default function Cart() {
                     <th>Quantity</th>
                     <th>Total</th>
                 </tr>
-                <tr>
+                <tr className={styles.tr}>
                     <td className={styles.td}>
                         <div className={styles.imgContainer}>
                             <Image src='/img/pizza.png' alt='' objectFit='cover' layout='fill' />

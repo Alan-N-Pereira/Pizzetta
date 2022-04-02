@@ -26,7 +26,7 @@
 	color: #777;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 786px) {
 	.container {
 		width: 100%;
 	}

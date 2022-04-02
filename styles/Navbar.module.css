@@ -80,7 +80,7 @@
 	color: #e08b16;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 786px) {
 	.item:nth-child(2) {
 		display: none;
 	}
