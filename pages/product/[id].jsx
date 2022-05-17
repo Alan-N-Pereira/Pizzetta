@@ -6,13 +6,12 @@ import {useState} from 'react'
 
 export default function Product() {
     const[size,setSize] =useState(0)
-    const pizza={
-        id:1,
-        img: '/img/pizza.png',
-        name: 'CAMPAGNOLA',
-        price: [19.9,23.9,27.9],
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, ea blanditiis. In nam corporis esse vel optio reiciendis voluptate nisi molestias labore quam velit praesentium aperiam ab, quaerat voluptatem amet!"
-    };
+    
+    const handleChange=(e,option)=>{
+        const checked =e.target.checked;
+
+        if(checked)
+    }
 
   return (
     <div className={styles.container}>
@@ -42,22 +41,12 @@ export default function Product() {
             </div>
             <h3 className={styles.choose}>Choose additional ingredients</h3>
             <div className={styles.ingredients}>
-                <div className={styles.option}>
-                    <input type="checkbox" name="double" id="double" className={styles.checkbox}/>
-                    <label htmlFor="double">Double Ingredients</label>
-                </div>
-                <div className={styles.option}>
-                    <input type="checkbox" name="cheese" id="cheese" className={styles.checkbox}/>
-                    <label htmlFor="cheese">Extra Cheese</label>
-                </div>
-                <div className={styles.option}>
-                    <input type="checkbox" name="spicy" id="spicy" className={styles.checkbox}/>
-                    <label htmlFor="spicy">Spicy Sauce</label>
-                </div>
-                <div className={styles.option}>
-                    <input type="checkbox" name="garlic" id="garlic" className={styles.checkbox}/>
-                    <label htmlFor="garlic">Garlic Sauce</label>
-                </div>
+                {pizza.extraOptions.map((option)=>{
+                    <div className={styles.option} key={option.id}>
+                        <input type="checkbox" name={option.text} id={option.text} className={styles.checkbox} onChange={(e)=>handleChange(e,option)}/>
+                        <label htmlFor="double">{option.text}</label>
+                    </div>
+                })}
             </div>
             <div className={styles.add}>
                 <input type="number" defaultValue={1} className={styles.quantity} />
