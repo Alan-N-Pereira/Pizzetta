@@ -7,6 +7,8 @@ import {useState} from 'react'
 export default function Product() {
     const [price,setPrice] = useState(pizza.prices[0])
     const[size,setSize] =useState(0)
+    const[quantity,setQuantity] =useState(1)
+    const[extras,setExtras] =useState([])
 
     const changePrice = (number)=>{
         setPrice(price+number)
@@ -23,8 +25,10 @@ export default function Product() {
 
         if(checked){
             changePrice(option.price)
+            setExtras(prev=>[...prev,option])
         }else{
             changePrice(-option.price)
+            setExtras(extras.filter((extra)=>extra._id !== option._id))
         }
     }
 
@@ -64,7 +68,7 @@ export default function Product() {
                 })}
             </div>
             <div className={styles.add}>
-                <input type="number" defaultValue={1} className={styles.quantity} />
+                <input onChange={(e)=>setQuantity(e.target.value)} type="number" defaultValue={1} className={styles.quantity} />
                 <button className={styles.button}>Add to Cart</button>
             </div>
         </div>
