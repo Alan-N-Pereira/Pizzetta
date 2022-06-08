@@ -35,7 +35,7 @@ export default function Product() {
     }
 
     const handleClick =()=>{
-        dispatch(addProduct(...pizza,extras,price,quantity))
+        dispatch(addProduct({...pizza,extras,price,quantity}))
     }
 
   return (
