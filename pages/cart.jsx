@@ -61,7 +61,6 @@ export default function Cart() {
                     }}
                     onApprove={function (data, actions) {
                         return actions.order.capture().then(function () {
-                            // Your code here after capture the order
                         });
                     }}
                 />
