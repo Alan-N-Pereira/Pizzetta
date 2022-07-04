@@ -55,7 +55,7 @@ export default function Cart() {
                                 ],
                             })
                             .then((orderId) => {
-                                // Your code here after create the order
+                                // Your code here after create the order in app
                                 return orderId;
                             });
                     }}
