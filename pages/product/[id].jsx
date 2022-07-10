@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux'
 import {useState} from 'react'
 import { addProduct } from '../../redux/cartSlice'
 
-export default function Product() {
+export default function Product({ pizza }) {
     const [price,setPrice] = useState(pizza.prices[0])
     const[size,setSize] =useState(0)
     const[quantity,setQuantity] =useState(1)
@@ -66,11 +66,13 @@ export default function Product() {
             </div>
             <h3 className={styles.choose}>Choose additional ingredients</h3>
             <div className={styles.ingredients}>
-                {pizza.extraOptions.map((option)=>{
-                    <div className={styles.option} key={option.id}>
-                        <input type="checkbox" name={option.text} id={option.text} className={styles.checkbox} onChange={(e)=>handleChange(e,option)}/>
-                        <label htmlFor="double">{option.text}</label>
-                    </div>
+                {pizza.extraOption.map((option)=>{
+                    return (
+                        <div className={styles.option} key={option.id}>
+                            <input type="checkbox" name={option.text} id={option.text} className={styles.checkbox} onChange={(e)=>handleChange(e,option)}/>
+                            <label htmlFor="double">{option.text}</label>
+                        </div>
+                    )
                 })}
             </div>
             <div className={styles.add}>
@@ -82,8 +84,13 @@ export default function Product() {
   )
 }
 
-export const getServerSideProps = async ({params}) => {
-	const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+export async function getIdProducts(params) {
+	const response = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+	return response;
+}
+
+export const getServerSideProps = async ({ params }) => {
+	const res = await getIdProducts(params);
 	return {
 		props: {
 			pizza: res.data

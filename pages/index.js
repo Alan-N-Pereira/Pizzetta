@@ -18,8 +18,12 @@ export default function Home({ pizzaList }) {
 	);
 }
 
+export async function getProducts() {
+	const response = await axios.get(`http://localhost:3000/api/products`);
+	return response;
+}
 export async function getServerSideProps(context) {
-	const res = await axios.get(`http://localhost:3000/api/products`);
+	const res = await getProducts();
 	return {
 		props: {
 			pizzaList: res.data
