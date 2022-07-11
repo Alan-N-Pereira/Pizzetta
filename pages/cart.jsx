@@ -72,42 +72,46 @@ export default function Cart() {
     <div className={styles.container}>
         <div className={styles.left}>
             <table className={styles.table}>
-                <tr className={styles.trTitle}>
-                    <th>Product</th>
-                    <th>Name</th>
-                    <th>Extras</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-                {cart.products.map(product=>(
-                    
-                    <tr className={styles.tr} key={product._id}>
-                        <td className={styles.td}>
-                            <div className={styles.imgContainer}>
-                                <Image src={product.img} alt='' objectFit='cover' layout='fill' />
-                            </div>
-                        </td>
-                        <td className={styles.td}>
-                            <span className={styles.name}>${product.title}</span>
-                        </td>
-                        <td className={styles.td}>
-                            <span className={styles.extras}>
-                                {product.extras.map(extra=>(<span key={extra._id}>{extra.text}, </span>))}</span>
-                        </td>
-                        <td className={styles.td}>
-                            <span className={styles.price}>${product.price}</span>
-                        </td >
-                        <td className={styles.td}>
-                            <span className={styles.quantity}>{product.quantity}</span>
-                        </td>
-                        <td className={styles.td}>
-                            <span className={styles.total}>{product.price*product.quantity}</span>
-                        </td>
+                <thead>
+                    <tr className={styles.trTitle}>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Extras</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
                     </tr>
-                ))}
-
+                </thead>
+                <tbody>
+                    {cart.products.map(product=>(
+                        
+                        <tr className={styles.tr} key={product._id}>
+                            <td className={styles.td}>
+                                <div className={styles.imgContainer}>
+                                    <Image src={product.img} alt='' objectFit='cover' layout='fill' />
+                                </div>
+                            </td>
+                            <td className={styles.td}>
+                                <span className={styles.name}>{product.title}</span>
+                            </td>
+                            <td className={styles.td}>
+                                <span className={styles.extras}>
+                                    {product.extras.map(extra=>(<span key={extra._id}>{extra.text}, </span>))}</span>
+                            </td>
+                            <td className={styles.td}>
+                                <span className={styles.price}>${product.price}</span>
+                            </td >
+                            <td className={styles.td}>
+                                <span className={styles.quantity}>{product.quantity}</span>
+                            </td>
+                            <td className={styles.td}>
+                                <span className={styles.total}>${product.price*product.quantity}</span>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
+
         </div>
         <div className={styles.right}>
             <div className={styles.wrapper}>
@@ -126,7 +130,8 @@ export default function Cart() {
                 options={{
                     "client-id": "test",
                     components: "buttons",
-                    currency: "USD"
+                    currency: "USD",
+                    "disable-funding":"credit,card,p24"
                 }}
             >
 				<ButtonWrapper
