@@ -12,7 +12,7 @@ import {
 
 export default function Cart() {
 
-    // This values are the props in the UI
+    const [open,setOpen] = useState(false)
     const amount = "2";
     const currency = "USD";
     const style = {"layout":"vertical"};
@@ -125,20 +125,27 @@ export default function Cart() {
                 <div className={styles.totalText}>
                     <b className={styles.totalTextTitle}>Total</b>${cart.total}
                 </div>
-                <button className={styles.button}>CHECKOUT NOW!</button>
-                <PayPalScriptProvider
-                options={{
-                    "client-id": "test",
-                    components: "buttons",
-                    currency: "USD",
-                    "disable-funding":"credit,card,p24"
-                }}
-            >
-				<ButtonWrapper
-                    currency={currency}
-                    showSpinner={false}
-                />
-			</PayPalScriptProvider>
+                {open ? (
+                    <div className={styles.paymentMethods}>
+                        <button className={styles.payButton}>CASH ON DELIVERY</button>
+                        <PayPalScriptProvider
+                            options={{
+                                "client-id": "test",
+                                components: "buttons",
+                                currency: "USD",
+                                "disable-funding":"credit,card,p24"
+                            }}
+                        >
+                            <ButtonWrapper
+                                currency={currency}
+                                showSpinner={false}
+                            />
+                        </PayPalScriptProvider>
+                    </div>
+                ):(
+                    <button onClick={()=>setOpen(true)} className={styles.button}>CHECKOUT NOW!</button>
+                )}
+                
             </div>
         </div>
     </div>
