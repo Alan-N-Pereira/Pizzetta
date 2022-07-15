@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from '../styles/Cart.module.css'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import {
     PayPalScriptProvider,
     PayPalButtons,
