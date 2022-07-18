@@ -1,6 +1,7 @@
 .container {
 	height: calc(100vh - 100px);
 	display: flex;
+	margin: 70px auto;
 }
 
 .left {
@@ -13,7 +14,8 @@
 
 .right {
 	flex: 1;
-	padding: 20px;
+	padding-left: 20px;
+	padding-top: 50px;
 	align-items: center;
 }
 
@@ -102,7 +104,8 @@
 		height: auto;
 		text-align: center;
 		flex-direction: column;
-		margin-top: 40px;
+		margin: 80px auto;
+		padding: auto 100px;
 	}
 
 	.imgContainer {
@@ -118,6 +121,7 @@
 		width: 100%;
 		padding: 0px 20px;
 		margin: 30px 0;
+		justify-content: space-around;
 	}
 
 	.ingredients {
@@ -134,9 +138,13 @@
 		height: 25px;
 	}
 
-	.quantity,
 	.button {
 		height: 50px;
 		padding: 10px 20px;
+	}
+
+	.quantity{
+		width: 50px;
+		height:50px;
 	}
 }
