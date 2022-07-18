@@ -7,6 +7,12 @@ const handler = async (req, res) => {
 	await dbConnect();
 
 	if (method === 'GET') {
+		try {
+			const orders = await Order.find();
+			res.status(200).json(orders);
+		} catch (error) {
+			res.status(500).json(error);
+		}
 	}
 	if (method === 'POST') {
 		try {
