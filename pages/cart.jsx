@@ -8,6 +8,8 @@ import {
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 
 export default function Cart() {
@@ -18,6 +20,16 @@ export default function Cart() {
     const style = {"layout":"vertical"};
     const dispatch = useDispatch()
     const cart = useSelector(state=>state.cart)
+    const router = useRouter()
+
+    const createOrder = aync (data)=>{
+        try {
+            const res= axios.post(`http://localhost:3000/api/orders`,data)
+            res.status ===201 && router.push('/orders/'+res.data._id)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const ButtonWrapper = ({ currency, showSpinner }) => {
         // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
@@ -60,7 +72,8 @@ export default function Cart() {
                             });
                     }}
                     onApprove={function (data, actions) {
-                        return actions.order.capture().then(function () {
+                        return actions.order.capture().then(function (details) {
+                            const shipping = details.purchase_units[0].shipping
                         });
                     }}
                 />
