@@ -15,21 +15,21 @@ import { reset } from '../redux/cartSlice';
 
 export default function Cart() {
 
-    const cart = useSelector(state=>state.cart)
-    const [open,setOpen] = useState(false)
+    const cart = useSelector(state=>state.cart);
+    const [open,setOpen] = useState(false);
     const amount = cart.total;
     const currency = "USD";
     const style = {layout:"vertical"};
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const createOrder = aync (data)=>{
+    const createOrder = async (data) => { 
         try {
             const res= await axios.post(`http://localhost:3000/api/orders`,data)
-            res.status ===201 && router.push('/orders/'+res.data._id)
-            dispatch(reset())
+            res.status === 201 && router.push('/orders/'+res.data._id)
+            dispatch(reset());
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
