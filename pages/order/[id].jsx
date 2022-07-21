@@ -1,8 +1,9 @@
+import axios from 'axios'
 import Image from 'next/image'
 import styles from '../../styles/Order.module.css'
 
-export default function Order() {
-    const status = 0
+export default function Order({order}) {
+    const status = order.status
     const statusClass = (index) =>{
         if(index-status < 1) return styles.done
         if(index-status === 1) return styles.inProgress
@@ -22,16 +23,16 @@ export default function Order() {
                     </tr>
                     <tr className={styles.tr}>
                         <td className={styles.td}>
-                            <span className={styles.id}>12345678</span>
+                            <span className={styles.id}>{order._id}</span>
                         </td>
                         <td className={styles.td}>
-                            <span className={styles.name}>John Doe</span>
+                            <span className={styles.name}>{order.customer}</span>
                         </td>
                         <td className={styles.td}>
-                            <span className={styles.address}>Elton st. 212-33 LA</span>
+                            <span className={styles.address}>{order.address}</span>
                         </td >
                         <td className={styles.td}>
-                            <span className={styles.total}>$39.80</span>
+                            <span className={styles.total}>${order.total}</span>
                         </td>
                     </tr>
                 </table>
