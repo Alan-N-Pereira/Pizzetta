@@ -79,3 +79,17 @@ export default function Order() {
     </div>
   )
 }
+
+export async function getIdOrder(params) {
+	const response = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+	return response;
+}
+
+export const getServerSideProps = async ({ params }) => {
+	const res = await getIdOrder(params);
+	return {
+		props: {
+			order: res.data
+		}
+	};
+};
