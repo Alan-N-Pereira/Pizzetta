@@ -11,6 +11,7 @@ import {
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { reset } from '../redux/cartSlice';
+import OrderDetail from '../component/OrderDetail';
 
 
 export default function Cart() {
@@ -165,6 +166,7 @@ export default function Cart() {
                 
             </div>
         </div>
+        {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
     </div>
   )
 }
