@@ -40,3 +40,14 @@
 .input{
     height:40px;
 }
+
+.button{
+    border: none;
+    background-color: teal;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
