@@ -3,8 +3,10 @@ import Head from 'next/head';
 import Featured from '../component/Featured';
 import ProducttList from '../component/ProducttList';
 import styles from '../styles/Home.module.css';
+import { useRef } from 'react';
 
 export default function Home({ pizzaList }) {
+	const productRef = useRef();
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -13,7 +15,7 @@ export default function Home({ pizzaList }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Featured />
-			<ProducttList pizzaList={pizzaList} />
+			<ProducttList ref={productRef} id="product" pizzaList={pizzaList} />
 		</div>
 	);
 }
