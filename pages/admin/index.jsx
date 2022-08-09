@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Image from 'next/image'
 import styles from '../../styles/Admin.module.css'
 export default function Admin() {
@@ -61,4 +62,9 @@ export default function Admin() {
       </div>
     </div>
   )
+}
+
+export const getServerSideProps = async ()=>{
+  const productRes = await axios.get('http://localhost:3000/api/products')
+  const orderRes = await axios.get('http://localhost:3000/api/orders')
 }
