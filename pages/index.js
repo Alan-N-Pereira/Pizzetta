@@ -12,7 +12,6 @@ export default function Home({ pizzaList }) {
 			<Head>
 				<title>Pizzetta</title>
 				<meta name="description" content="Best Pizza shop in town" />
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Featured />
 			<ProducttList ref={productRef} id="product" pizzaList={pizzaList} />
