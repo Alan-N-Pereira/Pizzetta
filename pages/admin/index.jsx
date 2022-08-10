@@ -67,4 +67,11 @@ export default function Admin() {
 export const getServerSideProps = async ()=>{
   const productRes = await axios.get('http://localhost:3000/api/products')
   const orderRes = await axios.get('http://localhost:3000/api/orders')
+
+  return{
+    props:{
+      orders: orderRes.data,
+      products: productRes.data
+    }
+  }
 }
