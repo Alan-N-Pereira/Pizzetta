@@ -1,7 +1,19 @@
 import axios from 'axios'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../../styles/Admin.module.css'
-export default function Admin() {
+export default function Admin({products,orders}) {
+  const [pizzaList,setPizzaList] = useState(products)
+  const [orderList,setOrderList] = useState(orders)
+
+  const handleDelete = async (id)=>{
+    try {
+      const res = await axios.delete(`http://localhost:3000/products/${id}`)
+      setPizzaList(pizzaList.filter((pizza)=>pizza._id !== id))
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className={styles.container}>
 
@@ -17,18 +29,20 @@ export default function Admin() {
               <th>Action</th>
             </tr>
           </tbody>
-          <tbody>
-            <tr className={styles.trTitle}>
-              <td><Image src='/img/pizza.png' width={50} height={50} objectFit='cover' /></td>
-              <td>PizzaId</td>
-              <td>Pizza Title</td>
-              <td>$50</td>
+            {pizzaList.map((product)=>{
+          <tbody key={product._id}>
+              <tr className={styles.trTitle}>
+              <td><Image src={product.img} width={50} height={50} objectFit='cover' /></td>
+              <td>{product._id}</td>
+              <td>{product.title}</td>
+              <td>${product.prices[0]}</td>
               <td>
                 <button className={styles.button}>Edit</button>
-                <button className={styles.button}>Delete</button>
+                <button className={styles.button} onClick={()=>handleDelete(product._id)}>Delete</button>
               </td>
             </tr>
           </tbody>
+            })}
         </table>
       </div>
 
