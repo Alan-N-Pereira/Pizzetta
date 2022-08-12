@@ -8,7 +8,7 @@ export default function Admin({products,orders}) {
 
   const handleDelete = async (id)=>{
     try {
-      const res = await axios.delete(`http://localhost:3000/products/${id}`)
+      const res = await axios.delete(`http://localhost:3000/api/products/${id}`)
       setPizzaList(pizzaList.filter((pizza)=>pizza._id !== id))
     } catch (error) {
       console.log(error)
