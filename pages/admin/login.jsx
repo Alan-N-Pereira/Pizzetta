@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import styles from '../../styles/Login.module.css'
@@ -6,6 +7,15 @@ export default function Login() {
   const [password, setPassword] = useState(null)
   const [error, setError] = useState(false)
   const router = useRouter()
+
+  const handleClick = async ()=>{
+    try {
+      await axios.post('http://localhost:3000/api/login',{username,password})
+      router('/admin')
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className={styles.container}>
