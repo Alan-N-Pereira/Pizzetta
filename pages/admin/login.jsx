@@ -11,9 +11,10 @@ export default function Login() {
   const handleClick = async ()=>{
     try {
       await axios.post('http://localhost:3000/api/login',{username,password})
-      router('/admin')
+      router.push('/admin')
     } catch (error) {
       console.log(error)
+      setError(true)
     }
   }
 
@@ -24,6 +25,7 @@ export default function Login() {
         <input className={styles.input} placeholder='username' onChange={(e)=> setUsername(e.target.value)} />
         <input className={styles.input} placeholder='password' type='password' onChange={(e)=> setPassword(e.target.value)} />
         <button className={styles.button} onClick={handleClick}>Sign In</button>
+        {error && <span className={styles.error}>Wrong Credentials!</span>}
       </div>
     </div>
   )
