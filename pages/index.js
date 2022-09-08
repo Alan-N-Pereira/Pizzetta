@@ -23,11 +23,18 @@ export async function getProducts() {
 	const response = await axios.get(`http://localhost:3000/api/products`);
 	return response;
 }
-export async function getServerSideProps(context) {
+export async function getServerSideProps(ctx) {
+	const myCookie = ctx.req?.cookies || '';
+	let admin = false
+
+	if(myCookie.token === process.env.TOKEN){
+		admin = true
+	}
 	const res = await getProducts();
 	return {
 		props: {
-			pizzaList: res.data
+			pizzaList: res.data,
+			admin
 		}
 	};
 }
