@@ -3,10 +3,13 @@ import Head from 'next/head';
 import Featured from '../component/Featured';
 import ProducttList from '../component/ProducttList';
 import styles from '../styles/Home.module.css';
-import { useRef } from 'react';
+import { useRef, useState} from 'react';
+import Add from '../component/Add';
+import AddButton from '../component/AddButton';
 
-export default function Home({ pizzaList }) {
+export default function Home({ pizzaList, admin }) {
 	const productRef = useRef();
+	const [close, setClose] = useState(true)
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -14,7 +17,9 @@ export default function Home({ pizzaList }) {
 				<meta name="description" content="Best Pizza shop in town" />
 			</Head>
 			<Featured />
+			{admin && <AddButton setClose={setClose}/> }
 			<ProducttList ref={productRef} id="product" pizzaList={pizzaList} />
+			{!close && <Add setClose={setClose}/>}
 		</div>
 	);
 }
