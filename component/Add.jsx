@@ -27,6 +27,12 @@ export default function Add({setClose}) {
           <label className={styles.label}>Desc</label>
           <textarea rows={4} type="text" onChange={(e)=>setDesc(e.target.value)} />
         </div>
+        <div className={styles.item}>
+          <label className={styles.label}>Prices</label>
+          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Small" onChange={(e)=>changePrice(e,0)} />
+          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Medium" onChange={(e)=>changePrice(e,1)} />
+          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Large" onChange={(e)=>changePrice(e,2)} />
+        </div>
       </div>
     </div>
   )
