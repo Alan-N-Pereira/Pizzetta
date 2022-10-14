@@ -10,6 +10,20 @@ export default function Add({setClose}) {
   const [extra,setExtra] = useState(null)
   const [extraOptions,setExtraOptions] = useState([])
 
+  const changePrice = (e,index)=>{
+    const currentPrices = prices
+    currentPrices[index] = e.target.value
+    setPrices(currentPrices)
+  }
+
+  const handleExtraInput = (e)=>{
+    setExtra({...extra, [e.target.name]: e.target.value})
+  }
+
+  const handleExtra = (e)=>{
+    setExtraOptions(prev=>[...prev,extra])
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
