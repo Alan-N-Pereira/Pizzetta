@@ -60,6 +60,12 @@ export default function Add({setClose}) {
             <input className={`${styles.input} ${styles.inputS}`} type="number" placeholder="Price" name="price" onChange={handleExtraInput} />
             <button className={styles.extraButton} onClick={handleExtra}>Add</button>
           </div>
+
+          <div className={styles.extraItems}>
+            {extraOptions.map((option)=>(
+              <span className={styles.extraItem} key={option.text}>{option.text}</span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
