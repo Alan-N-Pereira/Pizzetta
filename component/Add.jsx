@@ -67,6 +67,8 @@ export default function Add({setClose}) {
             ))}
           </div>
         </div>
+
+        <button className={styles.addButton} onClick={handleCreate}>Create</button>
       </div>
     </div>
   )
