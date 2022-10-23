@@ -48,3 +48,15 @@
     right: -10px;
 
 }
+
+.item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
