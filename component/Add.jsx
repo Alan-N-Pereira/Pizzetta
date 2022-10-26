@@ -52,9 +52,11 @@ export default function Add({setClose}) {
 
         <div className={styles.item}>
           <label className={styles.label}>Prices</label>
-          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Small" onChange={(e)=>changePrice(e,0)} />
-          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Medium" onChange={(e)=>changePrice(e,1)} />
-          <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Large" onChange={(e)=>changePrice(e,2)} />
+          <div className={styles.priceContainer}>
+            <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Small" onChange={(e)=>changePrice(e,0)} />
+            <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Medium" onChange={(e)=>changePrice(e,1)} />
+            <input className={`${styles.input} ${styles.inputS}`} type='number' placeholder="Large" onChange={(e)=>changePrice(e,2)} />
+          </div>
         </div>
 
         <div className={styles.item}>
