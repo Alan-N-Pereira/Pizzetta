@@ -68,5 +68,43 @@
 }
 
 .priceContainer{
+    display: flex;
+    justify-content: space-between;
+}
 
+.inputS{
+    width: 25%;
+}
+
+.extra{
+    display: flex;
+    justify-content: space-between;
+}
+
+.extraItems{
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.extraItem{
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid tomato;
+    background-color: white;
+    color: tomato;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addButton{
+    width: 25%;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0px;
+    align-self: flex-end;
 }
