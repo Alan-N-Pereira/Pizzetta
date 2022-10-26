@@ -60,3 +60,13 @@
     font-size: 14px;
     font-weight: 500;
 }
+
+.input{
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+
+.priceContainer{
+
+}
