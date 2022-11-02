@@ -101,7 +101,7 @@
 .addButton{
     width: 25%;
     border: none;
-    background-color: green;
+    background-color: teal;
     color: white;
     font-weight: 500;
     cursor: pointer;
