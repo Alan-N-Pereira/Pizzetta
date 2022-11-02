@@ -25,7 +25,14 @@ export default function Add({setClose}) {
   }
 
   const handleCreate = async ()=>{
-
+    const data = new FormData()
+    data.append('file',file)
+    data.append('upload_preset','uploads')
+    try {
+      const upload = await axios.post('cloudniry_api_url',data)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
