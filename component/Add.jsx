@@ -30,6 +30,15 @@ export default function Add({setClose}) {
     data.append('upload_preset','uploads')
     try {
       const upload = await axios.post('cloudniry_api_url',data)
+
+      const {url} = upload.data
+      const newProduct = {
+        title,desc,prices,extraOptions,img: url
+      }
+
+      await axios.post('http://localhost:300/api/products', newProduct)
+      setClose(true)
+
     } catch (err) {
       console.log(err)
     }
