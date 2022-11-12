@@ -35,7 +35,6 @@ To run the site on you local machine
 
 Some of the technologies used in the development of this web application are as follow:
 
--   [React.js](https://reactjs.org/): A JavaScript library for building user interfaces.
--   [Firebase](https://firebase.google.com/): The Firebase Realtime Database is a cloud-hosted NoSQL database that lets you store and sync data between your users in realtime.
--   [Styled Components](https://styled-components.com/): A CSS-in-JS styling framework that uses tagged template literals in JavaScript and the power of CSS to provide a platform that allows you to write actual CSS to style React components.
--   [Fuse.js](https://mongoosejs.com/): a powerful, lightweight fuzzy-search javascript library, with zero dependencies, that provides fuzzy search capabilities for applications and websites.
+-   [Next.js](https://nextjs.org/): Next.js is an open-source web development framework created by Vercel enabling React-based web applications with server-side rendering and generating static websites.
+-   [MongoDB](https://www.mongodb.com/): MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+-   [react-paypal-api]: an api to integerate paypal payment in the app.
