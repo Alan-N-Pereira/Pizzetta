@@ -1,6 +1,6 @@
 # Pizzetta
 
-The Pizzetta is an online web app built for ordering pizza online. The Pizzetta application was built using Next.js, MongoDB & Redux. The Application contains homepage, ordering page and cart page. There are four different pages, some using protected routes with auth listeners. Firebase firestore handles all the data and that data is retrieved using a custom hook; authentication is used on all pages, which is handled by Firebase as well.
+The Pizzetta is an online web app built for ordering pizza online. The Pizzetta application was built using Next.js, MongoDB & Redux. The Application contains homepage, ordering page and cart page. The new products can be added as admin. You can click on product to get info and then add it to cart to buy.
 
 ## Getting Started
 
@@ -9,12 +9,9 @@ To run the site on you local machine
 -   Fork or Clone this repository in your local machine.
 -   Cd into the directory and run `npm install` to download all the required packages.
 -   Then run `npm start` inside the terminal (To start the appllication on browser).
--   Create a Firebase account and start a new Project (To store all the series and flims data as well as user data).
--   Copy your Firebase project config form the "project setting" of the project (which contains the api key etc.) and paste it  under the config in "./src/lib/firebase.prod.js" (Now the application is connected to firebase but there is no data in it).
--   To "Seed" the data into the FireStore Database uncomment the code (Tagged as uncomment to seed) in 'firebase.prod.js' and refresh the app in browser `once` to seed the data in the database.
--   Refresh only once and comment the code again to avoid multiple instances of same data written into the database.
-    -   If this occurs delete the collection in database and redo the seeding from step 6.
--   To create a user just `signup` form the app. (This will create a new user). 
+-   Create a .env file in the server directory and store the following:
+MONGO_URL=Insert the correct connection URL for your MongoDB database (You can get this URL in connect after creating a cluster on MongoDB Atlas)
+-   Create a `USERNAME` and `PASSWORD` variable with value to create a admin to add or delete new products
 
 ## Info
 
