@@ -1,6 +1,6 @@
 # Pizzetta
 
-The Pizzetta is an online web app built for ordering pizza online. The Pizzetta application was built using Next.js, MongoDB & Redux. The Application contains homepage, ordering page and cart page. The new products can be added as admin. You can click on product to get info and then add it to cart to buy.
+The Pizzetta is an online web app built for ordering pizza online. The Pizzetta application was built using Next.js, MongoDB & Redux. The Application contains homepage, ordering page and cart page. The new products can be added as admin. You can click on product to get info and then add it to cart to buy. Payment can be done using paypal api.
 
 ## Getting Started
 
@@ -11,7 +11,8 @@ To run the site on you local machine
 -   Then run `npm start` inside the terminal (To start the appllication on browser).
 -   Create a .env file in the server directory and store the following:
 MONGO_URL=Insert the correct connection URL for your MongoDB database (You can get this URL in connect after creating a cluster on MongoDB Atlas)
--   Create a `USERNAME` and `PASSWORD` variable with value to create a admin to add or delete new products
+-   Create a `USERNAME` and `PASSWORD` variable with value to create a admin to add or delete new products.
+-   To setup payment you need to create a paypal account and get the api.
 
 ## Info
 
@@ -25,7 +26,7 @@ MONGO_URL=Insert the correct connection URL for your MongoDB database (You can g
 
 ## Potential Improvements
 
--   A better way to seed the data in Firebase.
+-   Improvenment in UI design.
 -   Better Optimization of certain parts of component.
 
 ## Technologies Used
