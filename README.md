@@ -1,6 +1,6 @@
 # Pizzetta
 
-The Pizzetta is an online web app built for ordering pizza online. The Pizzetta application was built using Next.js, MongoDB & Redux. The Application contains homepage, ordering page and cart page. The new products can be added as admin. You can click on product to get info and then add it to cart to buy. Payment can be done using paypal api.
+Pizzetta is an e-commerce website for ordering pizza online, built using Next.js and Redux in the back-end and MongoDB as the database. Implemented features including a homepage, ordering page, and cart page, allowing users to view product information, add items to their cart, and make payments using the PayPal API. 
 
 ## Getting Started
 
@@ -16,13 +16,12 @@ MONGO_URL=Insert the correct connection URL for your MongoDB database (You can g
 
 ## Info
 
--   The Netflix Clone is a React application inspired from the real Netflix site, which uses React with router and custom hooks on Client side and Firebase in the backend.
--   The project was an effort to recreate the original Netfix site with similar features using React.
--   The Application contains almost similar design and features of the original Netflix site.
--   The site is Bootstraped using create-react-app.
--   Firebase is used in backend to store Data.
--   The project uses Styled components which allows you to write css in javascript to design the site.
--   In order to write a new blog post, the user has to register and login.
+-   Built the front-end of the website using Next.js, a React-based framework
+-   Designed and implemented the back-end architecture using Redux, a state management library
+-   Utilized MongoDB to store and retrieve website data
+-   Integrated PayPal API for payment processing
+-   Developed an admin panel for adding new products to the menu
+-   Ensured the website was responsive and accessible for all users a seamless user experience
 
 ## Potential Improvements
 
